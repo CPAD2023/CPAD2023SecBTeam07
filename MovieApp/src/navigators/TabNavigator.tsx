@@ -4,6 +4,8 @@ import {StyleSheet, View} from 'react-native';
 import {COLORS, FONTSIZE, SPACING} from '../theme/theme';
 import CustomIcon from '../components/CustomIcon';
 import HomeScreen from '../screens/HomeScreen';
+import TicketScreen from '../screens/TicketScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
@@ -33,6 +35,50 @@ const TabNavigator = () => {
                 <CustomIcon
                   name="video"
                   color={COLORS.Black}
+                  size={FONTSIZE.size_30}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+       <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused, color, size}) => {
+            return (
+              <View
+                style={[
+                  styles.activeTabBackground,
+                  focused ? {backgroundColor: COLORS.Orange} : {},
+                ]}>
+                <CustomIcon
+                  name="search"
+                  color={COLORS.White}
+                  size={FONTSIZE.size_30}
+                />
+              </View>
+            );
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Ticket"
+        component={TicketScreen}
+        options={{
+          tabBarShowLabel: false,
+          tabBarIcon: ({focused, color, size}) => {
+            return (
+              <View
+                style={[
+                  styles.activeTabBackground,
+                  focused ? {backgroundColor: COLORS.Orange} : {},
+                ]}>
+                <CustomIcon
+                  name="ticket"
+                  color={COLORS.White}
                   size={FONTSIZE.size_30}
                 />
               </View>
