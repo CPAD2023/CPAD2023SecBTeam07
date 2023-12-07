@@ -1,6 +1,6 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {COLORS, FONTSIZE, SPACING} from '../theme/theme';
 import CustomIcon from '../components/CustomIcon';
 import HomeScreen from '../screens/HomeScreen';
@@ -42,7 +42,7 @@ const TabNavigator = () => {
           },
         }}
       />
-       <Tab.Screen
+      <Tab.Screen
         name="Search"
         component={SearchScreen}
         options={{
@@ -88,7 +88,7 @@ const TabNavigator = () => {
       />
     </Tab.Navigator>
   );
-}
+};
 
 const styles = StyleSheet.create({
   activeTabBackground: {
